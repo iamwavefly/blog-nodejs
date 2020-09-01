@@ -1,0 +1,26 @@
+<%- include("partials/_header") %>
+<div class="container mt-5">
+    <form action="/blog" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" name="content"></textarea>
+        </div>
+        <div class="col-auto my-1 w-50">
+            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+            <select class="custom-select mr-sm-2" name="category">
+              <option selected>Choose post category</option>
+              <option value="technology">Technology</option>
+              <option value="health">Health</option>
+              <option value="sport">Sport</option>
+              <option value="politic">politic</option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include("partials/_footer") %> 

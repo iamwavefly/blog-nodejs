@@ -1,0 +1,26 @@
+<%- include("partials/_header") %> 
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h2><%= articles.title %> </h2>
+            </div>
+            <div class="subtitle">
+                <p class="d-block text-muted"><span class="text-muted"><%= articles.date.toLocaleDateString() %></span> - <%= articles.category %></p>
+            </div>
+            <div class="card-content">
+                <p><%= articles.content %></p>
+            </div>
+            <a href="/blog" class="btn btn-success">All</a>
+            <form action="/blog/<%= articles.id %>?_method=DELETE" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+            <form action="/blog/<%= articles.id %>?_method=PUT" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-danger btn-sm">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/_footer") %> 
